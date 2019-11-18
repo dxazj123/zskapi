@@ -19,7 +19,7 @@
 	//创建查询对象
 
 
-	$command = new MongoDB\Driver\Command(['count' => 'needcheck','query'=>[]]);
+	$command = new MongoDB\Driver\Command(['count' => 'needcheck','query'=>['qgchannel'=>['$in'=>[new \MongoDB\BSON\Regex('^15','i')]]]]);
   	$result = $manager->executeCommand('zskapi',$command);
   	$res = $result->toArray();
   	$cnt = 0;
